@@ -1,27 +1,15 @@
-
-  
-li {
-    float: left;
-  }
-  
-  li a {
-    display: inline;
-    color: white;
-    text-align: right;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-
-header {
-    background-color: #638CB3;
-    color: white;
-    padding: 1rem;
+body {
+    margin: 0;
+    padding: 0;
+    background: #b5b2d4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #65656b, #0f0c29);
 }
 
-nav a {
-    color: white;
-    margin: 0 1rem;
-    text-decoration: none;
+header {
+    background-color: #dc3545; /* Red background */
+    color: #ffffff;
+    padding: 1rem;
 }
 
 .container {
@@ -29,27 +17,51 @@ nav a {
     width: auto;
     margin: 0 auto;
 }
+
 /* Styles for tablets */
 @media (max-width: 768px) {
-    .container {
+    .container .vertical-nav {
         width: auto;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .vertical-nav .nav-link {
+        padding: 10px;
+        text-align: center;
+    }
+    .content {
+        margin-left: 0;
+        margin-top: 50px; /* Adjust as needed for the height of the nav bar */
     }
 }
 
 /* Styles for smartphones */
 @media (max-width: 480px) {
-    .container {
+    .container .vertical-nav {
         width: auto;
+        height: auto;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .vertical-nav .nav-link {
+        padding: 10px;
+        text-align: left;
+    }
+    .content {
+        margin-left: 0;
+        margin-top: 50px; /* Adjust as needed for the height of the nav bar */
     }
 
-.card {
-    margin: 1rem 0;
+    .card {
+        margin: 1rem 0;
+    }
 }
- 
+
 /* styles.css */
 .hero {
-    background: url('images/Warner Bros.jpg') no-repeat center center;
-    background-size: cover;
     height: 750px;
     color: white;
     text-align: center;
@@ -92,76 +104,7 @@ nav a {
     background-color: #0056b3;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background: #b5b2d4;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #24243e, #65656b, #0f0c29); 
- 
-}
 
-.login-container {
-    perspective: 1000px;
-}
-
-.login-box {
-    width: 400px;
-    padding: 40px;
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
-    text-align: center;
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    transform: rotateY(20deg);
-    transition: transform 0.5s;
-}
-
-.login-box:hover {
-    transform: rotateY(0deg);
-}
-
-.login-box h2 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #fff;
-    text-transform: uppercase;
-}
-
-.login-box .user-box {
-    position: relative;
-}
-
-.login-box .user-box input {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-}
-
-.login-box .user-box label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    pointer-events: none;
-    transition: 0.5s;
-}
-
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #03e9f4;
-    font-size: 12px;
-}
 
 button {
     background: none;
@@ -211,4 +154,48 @@ button:hover:before {
 
 .option a:hover {
     text-decoration: underline;
+}
+
+.embed-responsive {
+    border: 5px solid #444;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.embed-responsive video {
+    border-radius: 10px;
+}
+
+.vertical-nav {
+    height: 50vh;
+    width: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #dc3545; /* Red background */
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.vertical-nav .nav-link {
+    color: white;
+    padding: 10px 20px;
+    display: block;
+}
+
+.vertical-nav .nav-link:hover {
+    background-color: #495057;
+}
+
+.content {
+    margin-left: 260px; /* Width of the vertical nav + some margin */
+    padding: 20px;
+}
+
+footer {
+    background-color: #dc3545; /* Red background */
+    color: #ffffff;
+    padding: 1rem;
 }
